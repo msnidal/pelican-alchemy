@@ -12,7 +12,17 @@
 {% endblock %}
 
 {% block page_header %}
-  Articles
+  Blogposts
+{% endblock %}
+
+{% block overview %}
+  {% for page in pages %}
+    {% if page.title == "Resume" %}
+      <div class="resume-section">
+        {{ page.content }}
+      </div>
+    {% endif %}
+  {% endfor %}
 {% endblock %}
 
 {% block content %}
