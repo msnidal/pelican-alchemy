@@ -31,10 +31,12 @@ fab fa-{{icon}}
         {% endfor %}
         {% if DISPLAY_PAGES_ON_MENU %}
           {% for page in pages %}
-            {% if LINKS and loop.first %}
-              <li class="list-inline-item text-muted">|</li>
+            {% if page.title != "Resume" %}
+              {% if LINKS and loop.first %}
+                <li class="list-inline-item text-muted">|</li>
+              {% endif %}
+              <li class="list-inline-item"><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
             {% endif %}
-            <li class="list-inline-item"><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
           {% endfor %}
         {% endif %}
         {% for icon, link in ICONS %}
